@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginAction extends Controller
 {
@@ -14,6 +15,12 @@ class LoginAction extends Controller
             'password' => 'required|string'
         ]);
 
-        
+        $credentials = $request->only(['username', 'password']);
+
+        if(!Auth::attempt($credentials)) {
+            return redirect()->route('auth.login');
+        }
+
+        return redirect()->route('dashboard.main');
     }
 }

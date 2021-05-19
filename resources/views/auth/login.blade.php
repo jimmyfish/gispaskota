@@ -3,6 +3,7 @@
 
 @section('content')
     <form method="post">
+        @csrf
 
         <div class="form-group">
             <label for="username"></label>
