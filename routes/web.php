@@ -18,7 +18,7 @@ Route::group([
     Route::group([
         'prefix' => 'location',
     ], function () {
-        Route::get('/', 'Location\ShowLocationAction@index')->name('dashboard.location');
+        Route::get('/', 'Location\ShowLocationAction@show')->name('dashboard.location');
         
         Route::get('/new', 'Location\CreateLocationAction@form')->name('dashboard.location.new');
         Route::post('/new', 'Location\CreateLocationAction@store')->name('dashboard.location.post');

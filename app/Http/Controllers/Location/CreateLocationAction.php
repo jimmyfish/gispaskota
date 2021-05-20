@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Location;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Location;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,7 +12,11 @@ class CreateLocationAction extends Controller
 {
     public function form()
     {
-        return view('location.form', ['title' => "Create Location"]);
+        $categories = Category::all();
+
+        if (!$categories) return redirect()->route('dashboard.location', ['message' => "Kategori pengelompokkan masih kosong!"]);
+
+        return view('location.form', ['title' => "Buat lokasi baru", 'categories' => $categories]);
     }
 
     public function store(Request $request)

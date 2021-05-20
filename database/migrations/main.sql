@@ -49,7 +49,7 @@ CREATE TABLE `location` (
     address TEXT,
     description TEXT,
     operation_hours JSON NOT NULL,
-    price_range BIGINT UNSIGNED NOT NULL DEFAULT 0,
+    price_range JSON,
     images varchar(255),
     nearbies JSON,
     geolocation JSON NOT NULL,

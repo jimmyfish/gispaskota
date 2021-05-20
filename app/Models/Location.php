@@ -11,4 +11,15 @@ class Location extends Model
     use HasFactory, SoftDeletes;
 
     protected $table = "location";
+
+    protected $fillable = [
+        'title',
+        'address',
+        'description',
+        'operation_hours',
+        'price_range',
+        'geolocation',
+        'user_id',
+        'category_id',
+    ];
 }
