@@ -14,6 +14,7 @@ Route::group([
     'middleware' => 'auth',
 ], function () {
     Route::get('/', 'Dashboard\GetDashboardAction@index')->name('dashboard.main');
+    Route::get('/logout', 'Auth\LogoutAction@do')->name('logout');
 
     Route::group([
         'prefix' => 'location',

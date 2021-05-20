@@ -54,7 +54,7 @@
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown">
-            <a class="nav-link" data-toggle="dropdown" href="#">Logout 
+            <a class="nav-link" data-toggle="dropdown" href="{{ route('logout') }}">Logout 
                 <i class="fas fa-fw fa-sign-out-alt"></i>
             </a>
         </li>
@@ -87,7 +87,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview menu-open">
-            <a href="./peta.html" class="nav-link active">
+            <a href="{{ route('dashboard.main') }}" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
